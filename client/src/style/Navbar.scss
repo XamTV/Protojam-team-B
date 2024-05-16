@@ -1,0 +1,18 @@
+.NavbarComponent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #708b75;
+  padding: 0.5rem;
+  h1 {
+    padding-left: 1rem;
+    color: #050517;
+  }
+  .navBar > a {
+    margin-right: 1rem;
+    text-decoration: none;
+    color: #050517;
+    font-weight: 600;
+  }
+}
