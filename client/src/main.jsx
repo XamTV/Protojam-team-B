@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import Team from "./pages/Team";
 import Quizz from "./pages/Quizz";
 import NotFound from "./components/NotFound";
+import Result from "./components/Result";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
       {
         path: "/team",
         element: <Team />,
+      },
+      {
+        path: "/results",
+        element: <Result />,
       },
       {
         path: "*",

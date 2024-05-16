@@ -1,5 +1,6 @@
 import Fra from "../assets/images/Fra.jpg";
 import Max from "../assets/images/Max.png";
+import Kelly from "../assets/images/kelly.jpg";
 import phil from "../assets/images/phil.webp";
 
 // Members Data
@@ -22,7 +23,7 @@ const members = [
   },
   {
     name: "Kelly Beck",
-    photo: Fra,
+    photo: Kelly,
     github: "https://github.com/KellyJeanneBECK",
   },
   {
