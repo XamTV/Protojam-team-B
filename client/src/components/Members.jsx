@@ -1,11 +1,21 @@
+import members from "../services/data";
+import github from "../assets/images/github.png";
+
 import "../style/Members.scss";
 
 function Members() {
   return (
     <section className="MembersComponent">
-      <h1>Members</h1>
-
-      <p>Members Component</p>
+      {members.map((member) => (
+        <div key={member.name} className="member">
+          <h4>{member.name}</h4>
+          <img className="member-img" src={member.photo} alt={member.name} />
+          <a href={member.github}>
+            <img className="github-logo" src={github} alt="github" />
+            Check my Github
+          </a>
+        </div>
+      ))}
     </section>
   );
 }
