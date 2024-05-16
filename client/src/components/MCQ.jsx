@@ -94,7 +94,7 @@ function MCQ() {
           type="button"
           onClick={() =>
             axios
-              .post("https://protojam-team-b.onrender.com/results", {
+              .post("https://6a360fe0ba5a35.lhr.life/results", {
                 result: `${points}`,
               })
               .then((res) => {
