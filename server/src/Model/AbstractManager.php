@@ -4,6 +4,7 @@ namespace App\Model;
 
 use App\Model\Connection;
 use PDO;
+use Symfony\Component\HttpClient\HttpClient;
 
 /**
  * Abstract class handling default manager.
