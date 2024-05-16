@@ -17,5 +17,5 @@ return [
     'summaries' => ['HomeController', 'getAllTexts',],
     'summaries/trees' => ['HomeController', 'getAllSummaries',],
     'questions' => ['HomeController', 'getAllQuestions',],
-    'results' => ['QuizzController', 'getResults', ['score']],
+    'results' => ['QuizzController', 'getResults'],
 ];
