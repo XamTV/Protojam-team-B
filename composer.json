@@ -1,15 +1,23 @@
 {
+ 
     "name": "khalidou/protojam-team-b",
     "autoload": {
         "psr-4": {
-            "Khalidou\\ProtojamTeamB\\": "src/"
+            "App\\": "server/src/"
+ 
         }
     },
     "authors": [
         {
+
             "name": "Ali Traore",
             "email": "a.traore78@laposte.net"
         }
     ],
     "require": {}
+        "symfony/http-client": "^7.0",
+        "filp/whoops": "^2.15",
+        "twig/twig": "^3.10"
+    }
+
 }

@@ -1,3 +1,4 @@
+-- Active: 1711641097871@@localhost@3306@protojam1
 -- phpMyAdmin SQL Dump
 -- version 4.5.4.1deb2ubuntu2
 -- http://www.phpmyadmin.net
@@ -39,19 +40,10 @@ INSERT INTO `item` (`id`, `title`) VALUES
 (1, 'Stuff'),
 (2, 'Doodads');
 
---
--- Index pour les tables exportées
---
-
---
 -- Index pour la table `item`
 --
 ALTER TABLE `item`
   ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT pour les tables exportées
---
 
 --
 -- AUTO_INCREMENT pour la table `item`
@@ -61,6 +53,7 @@ ALTER TABLE `item`
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
 
 use protojam; 
 
@@ -80,3 +73,19 @@ CREATE TABLE questions (
   Reponse3 TEXT NOT NULL, 
   Reponse4 TEXT NOT NULL 
 ); 
+
+
+CREATE TABLE tree (
+  `id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(50) NOT NULL,
+  `picture` VARCHAR(255) NOT NULL
+);
+
+INSERT INTO tree (`name`, `picture`) VALUES
+('Saule saltimbanque', 'Placeholder 1'),
+('Chêne cosmique', 'Placeholder 2'),
+('Erable enigmatique', 'Placeholder 3'),
+('Pin paradoxal', 'Placeholder 4'),
+('Sylvain Duriff', 'Placeholder 5');
+
+
