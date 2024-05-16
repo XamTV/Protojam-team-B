@@ -30,7 +30,7 @@ function MCQ() {
         .map((question) => (
           <section key={question}>
             <h1>Question {question.id} </h1>
-            <p>{question.question}</p>
+            <h2>{question.question}</h2>
             <form>
               <div>
                 <input
