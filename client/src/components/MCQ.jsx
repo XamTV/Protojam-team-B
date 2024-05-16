@@ -8,6 +8,14 @@ function MCQ() {
   const [points, setPoints] = useState(0);
   const [selected, setSelected] = useState();
   const [questions, setQuestions] = useState([]);
+  const [progress, setProgress] = useState(10);
+
+  const handlePlusClick = () => {
+    setProgress((prevProgress) => {
+      const newProgress = prevProgress + 10;
+      return newProgress;
+    });
+  };
 
   useEffect(() => {
     const getQuestions = () => {
@@ -30,20 +38,19 @@ function MCQ() {
         .map((question) => (
           <section key={question}>
             <h1>Question {question.id} </h1>
-            <p>{question.question}</p>
+            <h2>{question.question}</h2>
             <form>
               <div>
                 <input
-                  id={question.id}
                   type="radio"
                   name="questions"
+                  checked
                   onChange={() => setSelected(1)}
                 />
                 <p>{question.reponse1}</p>
               </div>
               <div>
                 <input
-                  id={question.id}
                   type="radio"
                   name="questions"
                   onChange={() => setSelected(2)}
@@ -52,7 +59,6 @@ function MCQ() {
               </div>
               <div>
                 <input
-                  id={question.id}
                   type="radio"
                   name="questions"
                   onChange={() => setSelected(3)}
@@ -61,7 +67,6 @@ function MCQ() {
               </div>
               <div>
                 <input
-                  id={question.id}
                   type="radio"
                   name="questions"
                   onChange={() => setSelected(4)}
@@ -75,9 +80,10 @@ function MCQ() {
         <button
           className={index >= questions.length ? "button hidden" : "button"}
           type="button"
+          id="plus-button"
           onClick={() => {
             setIndex(index + 1);
-
+            handlePlusClick();
             setPoints(points + selected);
           }}
         >
@@ -101,6 +107,10 @@ function MCQ() {
         >
           Voir mon résultat
         </button>
+      </div>
+      <div className="progress-container">
+        <div className="progress-bar" style={{ width: `${progress}%` }} />
+        <div className="progress-value">{progress} %</div>
       </div>
     </section>
   );
