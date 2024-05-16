@@ -8,5 +8,4 @@ use App\Model\TreeManager;
 
 class QuizzController extends AbstractAPIController
 {
-
 }
