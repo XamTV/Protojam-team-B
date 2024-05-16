@@ -4,8 +4,10 @@
   align-items: center;
   justify-content: space-between;
   background-color: #708b75;
-  padding: 0.5rem;
+  padding: 0 0.5rem;
   h1 {
+    margin: 1rem 0;
+    font-size: 3rem;
     padding-left: 1rem;
     color: #050517;
   }
@@ -14,5 +16,15 @@
     text-decoration: none;
     color: #050517;
     font-weight: 600;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .NavbarComponent {
+    flex-direction: column;
+    h1 {
+      font-size: 2rem;
+      padding: 0;
+    }
   }
 }

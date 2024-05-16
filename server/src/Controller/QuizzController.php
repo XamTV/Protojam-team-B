@@ -13,10 +13,12 @@ class QuizzController extends AbstractAPIController
     public function getResults()
     {
         $summaryManager = new SummaryManager();
-        // var_dump($_GET);
+        $results = $summaryManager->getResults();        
+        return $results;
+        // var_dump($results);
         // die();
 
-        $score = $_GET['score'];
+        // $score = $_GET['score'];
 
         // if ($_SERVER['REQUEST_METHOD'] === "POST") { 
         //     // $score = $_POST['points'];
@@ -32,10 +34,10 @@ class QuizzController extends AbstractAPIController
         //     return json_encode($result);
         // }
 
-        if ( $score > 10) {
-            $summary = $summaryManager->getSummary(1);
-            header('Location: /results');
-            return json_encode($summary);
-        }
+        // if ( $score > 10) {
+        //     $summary = $summaryManager->getSummary(1);
+        //     header('Location: /results');
+        //     return json_encode($summary);
+        // }
     }
 }
