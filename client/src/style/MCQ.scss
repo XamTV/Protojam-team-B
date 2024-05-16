@@ -54,7 +54,9 @@
   width: 0%;
   height: 20px;
   margin-bottom: 10px;
+  border-radius: 10px;
   background-color: #708b75;
+  transition: 0.5s ease-in-out;
 }
 .progress-value {
   font-size: 18px;
@@ -66,3 +68,4 @@
     padding: 2rem 5vw;
     border-radius: 50px;
   }
+}
