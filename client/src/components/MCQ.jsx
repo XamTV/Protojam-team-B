@@ -6,9 +6,10 @@ import "../style/MCQ.scss";
 function MCQ() {
   const [index, setIndex] = useState(1);
   const [points, setPoints] = useState(0);
-  const [selected, setSelected] = useState();
+  const [selected, setSelected] = useState(0);
   const [questions, setQuestions] = useState([]);
   const [progress, setProgress] = useState(10);
+  /*  const [results, setResults] = useState([]); */
 
   const handlePlusClick = () => {
     setProgress((prevProgress) => {
@@ -31,6 +32,20 @@ function MCQ() {
     getQuestions();
   }, []);
 
+  /*   useEffect(() => {
+    const getresult = () => {
+      axios
+        .get("https://741a9b12df078b.lhr.life/result")
+        .then((res) => {
+          setResults(res.data);
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+        });
+    };
+    getresult();
+  }, []); */
+
   return (
     <section className="MCQComponent">
       {questions
@@ -44,7 +59,6 @@ function MCQ() {
                 <input
                   type="radio"
                   name="questions"
-                  checked
                   onChange={() => setSelected(1)}
                 />
                 <p>{question.reponse1}</p>
@@ -92,18 +106,18 @@ function MCQ() {
         <button
           className={index === questions.length ? "button" : "button hidden"}
           type="button"
-          onClick={() =>
+          onClick={() => {
+            setPoints(points + selected);
+
             axios
-              .post("https://6a360fe0ba5a35.lhr.life/results", {
-                result: `${points}`,
-              })
+              .post("https://3b8b0ebd1ba8a2.lhr.life/results", points)
               .then((res) => {
-                console.info(res);
+                console.info(res.data);
               })
               .catch((err) => {
                 console.error(err);
-              })
-          }
+              });
+          }}
         >
           Voir mon résultat
         </button>
