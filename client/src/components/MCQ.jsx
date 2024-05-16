@@ -1,12 +1,27 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
-import questions from "../services/question";
 import "../style/MCQ.scss";
 
 function MCQ() {
   const [index, setIndex] = useState(1);
   const [points, setPoints] = useState(0);
   const [selected, setSelected] = useState();
+  const [questions, setQuestions] = useState([]);
+
+  useEffect(() => {
+    const getQuestions = () => {
+      axios
+        .get(`https://protojam-team-b.onrender.com/questions`)
+        .then((res) => {
+          setQuestions(res.data);
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+        });
+    };
+    getQuestions();
+  }, []);
 
   return (
     <section className="MCQComponent">
@@ -71,6 +86,18 @@ function MCQ() {
         <button
           className={index === questions.length ? "button" : "button hidden"}
           type="button"
+          onClick={() =>
+            axios
+              .post("https://protojam-team-b.onrender.com/results", {
+                result: `${points}`,
+              })
+              .then((res) => {
+                console.info(res);
+              })
+              .catch((err) => {
+                console.error(err);
+              })
+          }
         >
           Voir mon résultat
         </button>
