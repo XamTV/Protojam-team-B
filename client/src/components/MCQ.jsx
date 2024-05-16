@@ -20,7 +20,7 @@ function MCQ() {
   useEffect(() => {
     const getQuestions = () => {
       axios
-        .get(`https://protojam-team-b.onrender.com/questions`)
+        .get(import.meta.env.VITE_API_URL)
         .then((res) => {
           setQuestions(res.data);
         })
