@@ -9,5 +9,4 @@ use Symfony\Component\HttpClient\HttpClient;
 class TreeManager extends AbstractManager
 {
     public const TABLE = 'tree';
-
 }

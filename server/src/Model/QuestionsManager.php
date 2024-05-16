@@ -6,7 +6,7 @@ use App\Model\AbstractManager;
 use PDO;
 use Symfony\Component\HttpClient\HttpClient;
 
-class QuestionManager extends AbstractManager
+class QuestionsManager extends AbstractManager
 {
     public const TABLE = 'questions';
 }

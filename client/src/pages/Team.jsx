@@ -1,11 +1,12 @@
+import Members from "../components/Members";
+
 import "../style/Team.scss";
 
 export default function Team() {
   return (
-    <div id="TeamContainer">
-      <h1>Team</h1>
-
-      <p>Team Page</p>
+    <div className="TeamContainer">
+      <h2>Découvrez les membres de l'équipe</h2>
+      <Members />
     </div>
   );
 }

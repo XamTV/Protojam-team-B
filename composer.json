@@ -7,13 +7,19 @@
     },
     "authors": [
         {
+<<<<<<< HEAD
             "name": "Ali Traore",
             "email": "a.traore78@laposte.net"
+=======
+            "name": "B4rka",
+            "email": "p.e.dejonghe@gmail.com"
+>>>>>>> aec76224c3cd0cc5cbd83ab72f20d532004f52bd
         }
     ],
     "require": {
         "symfony/http-client": "^7.0",
         "filp/whoops": "^2.15",
-        "twig/twig": "^3.10"
+        "twig/twig": "^3.10",
+        "php": ">=8.1"
     }
 }
