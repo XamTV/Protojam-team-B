@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Controller;
+
 use App\Controller\AbstractAPIController;
 use App\Model\PersonalityManager;
 use App\Model\QuestionManager;
