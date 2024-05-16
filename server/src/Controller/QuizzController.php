@@ -13,10 +13,10 @@ class QuizzController extends AbstractAPIController
     public function getResults()
     {
         $summaryManager = new SummaryManager();
-        $results = $summaryManager->getResults();
-        
-        var_dump($results);
-        die();
+        $results = $summaryManager->getResults();        
+        return $results;
+        // var_dump($results);
+        // die();
 
         // $score = $_GET['score'];
 
