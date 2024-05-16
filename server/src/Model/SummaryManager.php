@@ -30,4 +30,17 @@ class SummaryManager extends AbstractManager
 
         return $statement->fetch();
     }
+
+    public function getResults()
+    {
+        $client = HttpClient::create();
+        $response = $client->request(
+            'POST',
+            'https://'
+        );
+        
+        $result = $response->toArray();
+
+        return $result;
+    }
 }
