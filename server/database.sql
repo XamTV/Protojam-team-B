@@ -1,4 +1,4 @@
--- Active: 1711641097871@@localhost@3306@protojam1
+-- Active: 1713963386026@@127.0.0.1@3306@protojam
 -- phpMyAdmin SQL Dump
 -- version 4.5.4.1deb2ubuntu2
 -- http://www.phpmyadmin.net
@@ -73,7 +73,6 @@ CREATE TABLE questions (
   Reponse3 TEXT NOT NULL, 
   Reponse4 TEXT NOT NULL 
 ); 
-
 
 CREATE TABLE tree (
   `id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
