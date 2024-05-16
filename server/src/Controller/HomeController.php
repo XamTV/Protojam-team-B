@@ -29,7 +29,7 @@ class HomeController extends AbstractController
         $treeManager = new SummaryManager();
         $summaries = $treeManager->selectAll();
 
-        return json_encode($summaries);
+        return json_encode(['summaries' => $summaries]);
     }
 
     public function getAllSummaries(): string
