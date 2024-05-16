@@ -16,6 +16,7 @@
     "postinstall": "husky install || true",
     "dev:client": "npm run dev --workspace=client",
     "lint": "lint-staged",
+    "build": "vite build",
     "test": "npm run test --workspaces --if-present",
     "clean": "cross-env-shell \"rm -rf ./client/node_modules ./node_modules ./package-lock.json\""
   },
