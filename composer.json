@@ -1,0 +1,19 @@
+{
+    "name": "khalidou/protojam-team-b",
+    "autoload": {
+        "psr-4": {
+            "App\\": "server/src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "B4rka",
+            "email": "p.e.dejonghe@gmail.com"
+        }
+    ],
+    "require": {
+        "symfony/http-client": "^7.0",
+        "filp/whoops": "^2.15",
+        "twig/twig": "^3.10"
+    }
+}
