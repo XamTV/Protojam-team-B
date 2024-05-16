@@ -40,19 +40,10 @@ INSERT INTO `item` (`id`, `title`) VALUES
 (1, 'Stuff'),
 (2, 'Doodads');
 
---
--- Index pour les tables exportées
---
-
---
 -- Index pour la table `item`
 --
 ALTER TABLE `item`
   ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT pour les tables exportées
---
 
 --
 -- AUTO_INCREMENT pour la table `item`
@@ -63,17 +54,14 @@ ALTER TABLE `item`
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
-CREATE DATABASE `protojam1`;
 
-DROP TABLE `tree`;
-
-CREATE TABLE `tree` (
+CREATE TABLE tree (
   `id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(50) NOT NULL,
   `picture` VARCHAR(255) NOT NULL
 );
 
-INSERT INTO `tree` (`name`, `picture`) VALUES
+INSERT INTO tree (`name`, `picture`) VALUES
 ('Saule saltimbanque', 'Placeholder 1'),
 ('Chêne cosmique', 'Placeholder 2'),
 ('Erable enigmatique', 'Placeholder 3'),
