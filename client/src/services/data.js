@@ -17,12 +17,12 @@ const members = [
   },
   {
     name: "Ali Traore",
-    photo: "Photo",
+    photo: Max,
     github: "https://github.com/AliTraore",
   },
   {
     name: "Kelly Beck",
-    photo: "Photo",
+    photo: Fra,
     github: "https://github.com/KellyJeanneBECK",
   },
   {

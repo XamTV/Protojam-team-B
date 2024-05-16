@@ -23,9 +23,9 @@ export default function Home() {
         végétal révèle sur votre être intérieur.{" "}
       </p>
 
-      <button type="button">
-        <Link to="/quizz">Commencez le test</Link>
-      </button>
+      <Link to="/quizz">
+        <button type="button">Commencez le test</button>
+      </Link>
     </div>
   );
 }
