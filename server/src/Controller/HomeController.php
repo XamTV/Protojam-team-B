@@ -6,7 +6,7 @@ use App\Model\QuestionsManager;
 use App\Model\SummaryManager;
 use App\Model\TreeManager;
 
-class HomeController extends AbstractController
+class HomeController extends AbstractAPIController
 {
     /**
      * Display home page
