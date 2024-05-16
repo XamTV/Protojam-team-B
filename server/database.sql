@@ -72,3 +72,11 @@ CREATE TABLE `tree` (
   `name` VARCHAR(50) NOT NULL,
   `picture` VARCHAR(255) NOT NULL
 );
+
+INSERT INTO `tree` (`name`, `picture`) VALUES
+('Saule saltimbanque', 'Placeholder 1'),
+('Chêne cosmique', 'Placeholder 2'),
+('Erable enigmatique', 'Placeholder 3'),
+('Pin paradoxal', 'Placeholder 4'),
+('Sylvain Duriff', 'Placeholder 5');
+
