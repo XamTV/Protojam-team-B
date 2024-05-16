@@ -1,0 +1,15 @@
+{
+    "name": "khalidou/protojam-team-b",
+    "autoload": {
+        "psr-4": {
+            "Khalidou\\ProtojamTeamB\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Ali Traore",
+            "email": "a.traore78@laposte.net"
+        }
+    ],
+    "require": {}
+}
