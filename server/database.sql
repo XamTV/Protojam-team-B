@@ -55,6 +55,26 @@ ALTER TABLE `item`
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
 
+use protojam; 
+
+CREATE TABLE summary (
+  id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  text TEXT NOT NULL,
+  tree_id INT NOT NULL,
+  FOREIGN KEY (tree_id)
+  REFERENCES tree(id)
+); 
+
+CREATE TABLE questions (
+  id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  question TEXT NOT NULL,
+  Reponse1 TEXT NOT NULL, 
+  Reponse2 TEXT NOT NULL, 
+  Reponse3 TEXT NOT NULL, 
+  Reponse4 TEXT NOT NULL 
+); 
+
+
 CREATE TABLE tree (
   `id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(50) NOT NULL,
@@ -67,4 +87,5 @@ INSERT INTO tree (`name`, `picture`) VALUES
 ('Erable enigmatique', 'Placeholder 3'),
 ('Pin paradoxal', 'Placeholder 4'),
 ('Sylvain Duriff', 'Placeholder 5');
+
 
