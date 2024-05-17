@@ -3,6 +3,7 @@
   margin: auto;
   a {
     button {
+      cursor: pointer;
       margin-top: 2rem;
       background-color: #ffffff50;
       border: 4px #050517 solid;
@@ -10,6 +11,12 @@
       padding: 1rem;
       font-size: 1.25rem;
       font-weight: 600;
+    }
+    button:hover {
+      cursor: pointer;
+      box-shadow:
+        7px 7px 14px #ffffff50,
+        -7px -7px 14px #ffffff50;
     }
   }
 }
