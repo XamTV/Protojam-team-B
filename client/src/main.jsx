@@ -8,6 +8,7 @@ import Team from "./pages/Team";
 import Quizz from "./pages/Quizz";
 import NotFound from "./components/NotFound";
 import Login from "./pages/Login";
+import { Authcontext } from "./context/Authcontext";
 
 const router = createBrowserRouter([
   {
@@ -39,5 +40,7 @@ const router = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <RouterProvider router={router} />
+  <Authcontext>
+    <RouterProvider router={router} />
+  </Authcontext>
 );
