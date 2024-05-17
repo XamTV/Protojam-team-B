@@ -13,6 +13,7 @@ class HomeController extends AbstractAPIController
      */
     public function index(): string
     {
+        var_dump($_SESSION);
         return $this->twig->render('Home/index.html.twig');
     }
 
