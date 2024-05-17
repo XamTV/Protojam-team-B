@@ -17,10 +17,15 @@ public function registerUser()
         $body = file_get_contents('php://input');
         $user = json_decode($body, true);
         $accountManager = new AccountManager();
-        $register = $accountManager->register($user);
-        $_SESSION['username'] = $register['username'];
-        
-        return $register['username'];
+        // var_dump($user);
+        // die();
+        if (isset($user['username']) && isset($user['password'])) {
+            $register = $accountManager->register($user);
+            $_SESSION['username'] = $register['username'];
+            return $register['username'];
+        } else {
+            header('Location: /non');
+        }
     }
 
     public function connectUser()
@@ -28,8 +33,8 @@ public function registerUser()
         $body = file_get_contents('php://input');
         $user = json_decode($body, true);
         $accountManager = new AccountManager();
-        $connect = $accountManager->selectOneByName($user);
-        if ($connect['password'] === $user['password']) {
+        $name = $accountManager->selectOneByName($user);
+        if ($name['password'] === $user['password']) {
             $_SESSION['username'] = $user['username'];
             return true;
         } else {
