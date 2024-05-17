@@ -66,7 +66,7 @@ INSERT INTO tree (`name`, `picture`) VALUES
 ('Chêne cosmique', 'https://cdn.discordapp.com/attachments/1240565032056524851/1240766535098695731/Chene.jpg?ex=6647c162&is=66466fe2&hm=d3cc127ab03d7af56eb6bc9a344d6d6c5db49b94e381a1a89b96f5a3bf103c6f&'),
 ('Erable enigmatique', 'https://jardinerfacile.fr/wp-content/uploads/2020/02/arbre-e%CC%81rable-du-Japon.jpg'),
 ('Pin paradoxal', 'https://media.discordapp.net/attachments/1240565032056524851/1240766535622983852/Pin.jpg?ex=6647c162&is=66466fe2&hm=e0b703483e7b14a62e08833023ea1970f843c8ca754c3c10bbd40fd8dfa30f7c&=&format=webp'),
-('Sylvain Duriff', 'https://media.discordapp.net/attachments/1240299509876129835/1240589314774138890/Sylv.jpg?ex=66471c55&is=6645cad5&hm=9c1bb5b4102fa31ec2d693bab9166e43718a17b698cf9eaf456e7525f84d7f7b&=&format=webp&width=322&height=573');
+('Sylvain Duriff', 'https://media.discordapp.net/attachments/1240299509876129835/1240589314774138890/Sylv.jpg?ex=6647c515&is=66467395&hm=5aac2f6856e6a8d2cf7bfe29279730057cd4d7b610e2ed88aa30821052c9dded&=&format=webp&width=322&height=573');
 
 
 CREATE TABLE summary (
