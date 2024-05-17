@@ -11,16 +11,13 @@ function MCQ({ setData }) {
   const [questions, setQuestions] = useState([]);
   const [progress, setProgress] = useState(10);
 
-  const info = {
-    points,
-  };
   const handlePlusClick = () => {
     setProgress((prevProgress) => {
       const newProgress = prevProgress + 10;
       return newProgress;
     });
   };
-
+  console.info(points);
   useEffect(() => {
     const getQuestions = () => {
       axios
@@ -94,7 +91,6 @@ function MCQ({ setData }) {
           Question suivante
         </button>
 
-        {/*  <Link to="/results" state={{ data }}> */}
         <button
           className={index === questions.length ? "button" : "button hidden"}
           type="button"
@@ -102,7 +98,7 @@ function MCQ({ setData }) {
             setPoints(points + selected);
 
             axios
-              .post(import.meta.env.VITE_SSH_URL, info)
+              .post(import.meta.env.VITE_SSH_URL, points)
               .then((res) => {
                 setData(res.data);
               })

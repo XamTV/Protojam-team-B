@@ -2,6 +2,7 @@ import Fra from "../assets/images/Fra.jpg";
 import Max from "../assets/images/Max.png";
 import Kelly from "../assets/images/kelly.jpg";
 import phil from "../assets/images/phil.webp";
+import Ali from "../assets/images/ali.jpg";
 
 // Members Data
 
@@ -18,7 +19,7 @@ const members = [
   },
   {
     name: "Ali Traore",
-    photo: Max,
+    photo: Ali,
     github: "https://github.com/AliTraore",
   },
   {
