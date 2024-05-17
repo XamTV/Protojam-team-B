@@ -1,10 +1,14 @@
 import { Link } from "react-router-dom";
 
+import { useData } from "../context/Authcontext";
+
 import "../style/Home.scss";
 
 export default function Home() {
+  const { user } = useData();
   return (
     <div className="HomeContainer">
+      <p>Bienvenue {user.username} </p>
       <h1>Le test de personnalité de Niavlys</h1>
 
       <p>

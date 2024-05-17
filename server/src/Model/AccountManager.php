@@ -26,8 +26,9 @@ class AccountManager extends AbstractManager
 
     public function selectOneByName(array $user)
     {
+        
         $statement = $this->pdo->prepare("SELECT * FROM " . static::TABLE . " WHERE name=:name");
-        $statement->bindValue('name', $user['username'], \PDO::PARAM_INT);
+        $statement->bindValue(':name', $user['username'], \PDO::PARAM_STR);
         $statement->execute();
 
         return $statement->fetch();
