@@ -14,15 +14,34 @@ class QuizzController extends AbstractAPIController
     {
         $summaryManager = new SummaryManager();    
         if ($_SERVER['REQUEST_METHOD'] === "POST") {
-            $result = $_POST;
-            if (empty($result)) {
+            $body = file_get_contents('php://input');
+            $result = json_decode($body, true);
+            var_dump($result);
+            die();
+            if ($result === 24) {
                 $summary = $summaryManager->getSummary(5);
-            } else {
+            } elseif ($result >= 10 && $result <= 18) {
+                $summary = $summaryManager->getSummary(1);
+            } elseif ($result > 18 && $result <= 26) {
+                $summary = $summaryManager->getSummary(2);
+            } elseif ($result > 26 && $result <= 32) {
+                $summary = $summaryManager->getSummary(3);
+            } elseif ($result > 32) {
                 $summary = $summaryManager->getSummary(4);
             }
             return json_encode($summary);
         }
-    $summary = $summaryManager->getSummary(2);
+    $summary = $summaryManager->getSummary(3);
     return json_encode($summary);
     }
+
+    public function resultat()
+    {
+        var_dump($_SESSION);
+        die();
+        $resultat = $_SESSION ['result'];
+        return $resultat;
+    }
+    
+
 }
