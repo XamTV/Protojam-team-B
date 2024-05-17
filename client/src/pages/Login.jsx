@@ -1,11 +1,9 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import { useData } from "../context/Authcontext";
 
-import axios from "axios";
-
 import "../style/Login.scss";
-
 
 function Login() {
   const [username, setUsername] = useState("");
@@ -41,8 +39,10 @@ function Login() {
     axios
       .post(`${import.meta.env.VITE_SSH_URL}register`, myJSON)
       .then((res) => {
-        setUser({ username: res.data });
-        navigate("/home");
+        if (res.data !== "" && password !== "") {
+          setUser({ username: res.data });
+          navigate("/home");
+        }
       });
   };
 
@@ -50,39 +50,43 @@ function Login() {
     <section className="LoginComponent">
       <h1>PersonaliTREE</h1>
       <div className="champs">
-      <form className="username">
-        <label htmlFor="username">Username : </label>
-        <input
-          className="profile-input"
-          type="text"
-          value={username}
-          onChange={handleUsername}
-          id="username"
-          name="username"
-          required
-        />
-      </form>
-      <form className="password">
-        <label htmlFor="pass">Password :</label>
-        <input
-          className="profile-input"
-          type="password"
-          id="pass"
-          name="password"
-          value={password}
-          onChange={handlePassword}
-          required
-        />
-      </form>
+        <form className="username">
+          <input
+            className="profile-input"
+            placeholder="Nom d'utilisateur"
+            type="text"
+            value={username}
+            onChange={handleUsername}
+            id="username"
+            name="username"
+            required
+          />
+        </form>
+        <form className="password">
+          <input
+            className="profile-input"
+            placeholder="Mot de passe"
+            type="password"
+            id="pass"
+            name="password"
+            value={password}
+            onChange={handlePassword}
+            required
+          />
+        </form>
       </div>
       <div className="buttonsConnect">
-      <button type="button" className="profile-button" onClick={handleLogin}>
-        Se Connecter
-      </button>
+        <button type="button" className="profile-button" onClick={handleLogin}>
+          Se Connecter
+        </button>
 
-      <button type="button" className="profile-button" onClick={handleRegister}>
-        S'enregistrer
-      </button>
+        <button
+          type="button"
+          className="profile-button"
+          onClick={handleRegister}
+        >
+          S'enregistrer
+        </button>
       </div>
     </section>
   );
