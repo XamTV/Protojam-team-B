@@ -9,6 +9,7 @@ use PDO;
  */
 class AccountManager extends AbstractManager
 {
+
     public const TABLE = 'user';
 
     public function register(array $user)
@@ -31,4 +32,5 @@ class AccountManager extends AbstractManager
 
         return $statement->fetch();
     }
+
 }

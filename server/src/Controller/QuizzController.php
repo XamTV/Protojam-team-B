@@ -16,7 +16,9 @@ class QuizzController extends AbstractAPIController
         if ($_SERVER['REQUEST_METHOD'] === "POST") {
             $body = file_get_contents('php://input');
             $result = json_decode($body, true);
+
             $_SESSION['result'] = $result;
+
             if ($result === 24) {
                 $summary = $summaryManager->getSummary(5);
             } elseif ($result >= 10 && $result <= 18) {
@@ -35,9 +37,11 @@ class QuizzController extends AbstractAPIController
     }
 
     public function resultat()
+
     {   
         $_SESSION['test'] = 40;
         $resultat = $_SESSION ['result'];
         return json_encode($resultat);
     }
+
 }
