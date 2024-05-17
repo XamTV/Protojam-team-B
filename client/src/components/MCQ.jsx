@@ -1,15 +1,15 @@
+/* eslint-disable react/prop-types */
 import { useState, useEffect } from "react";
 import axios from "axios";
 
 import "../style/MCQ.scss";
 
-function MCQ() {
+function MCQ({ setData }) {
   const [index, setIndex] = useState(1);
   const [points, setPoints] = useState(0);
   const [selected, setSelected] = useState(0);
   const [questions, setQuestions] = useState([]);
   const [progress, setProgress] = useState(10);
-  /*  const [results, setResults] = useState([]); */
 
   const handlePlusClick = () => {
     setProgress((prevProgress) => {
@@ -17,7 +17,7 @@ function MCQ() {
       return newProgress;
     });
   };
-
+  console.info(points);
   useEffect(() => {
     const getQuestions = () => {
       axios
@@ -31,20 +31,6 @@ function MCQ() {
     };
     getQuestions();
   }, []);
-
-  /*   useEffect(() => {
-    const getresult = () => {
-      axios
-        .get("https://741a9b12df078b.lhr.life/result")
-        .then((res) => {
-          setResults(res.data);
-        })
-        .catch((error) => {
-          console.error("Error:", error);
-        });
-    };
-    getresult();
-  }, []); */
 
   return (
     <section className="MCQComponent">
@@ -95,6 +81,7 @@ function MCQ() {
           className={index >= questions.length ? "button hidden" : "button"}
           type="button"
           id="plus-button"
+          disabled={!(selected > 0)}
           onClick={() => {
             setIndex(index + 1);
             handlePlusClick();
@@ -103,6 +90,7 @@ function MCQ() {
         >
           Question suivante
         </button>
+
         <button
           className={index === questions.length ? "button" : "button hidden"}
           type="button"
@@ -110,9 +98,9 @@ function MCQ() {
             setPoints(points + selected);
 
             axios
-              .post("https://3b8b0ebd1ba8a2.lhr.life/results", points)
+              .post(`${import.meta.env.VITE_SSH_URL}results`, points)
               .then((res) => {
-                console.info(res.data);
+                setData(res.data);
               })
               .catch((err) => {
                 console.error(err);
@@ -121,6 +109,7 @@ function MCQ() {
         >
           Voir mon résultat
         </button>
+        {/*  </Link> */}
       </div>
       <div className="progress-container">
         <div className="progress-bar" style={{ width: `${progress}%` }} />
