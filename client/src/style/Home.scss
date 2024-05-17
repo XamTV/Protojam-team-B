@@ -1,6 +1,9 @@
 .HomeContainer {
   width: 80vw;
   margin: auto;
+  .welcome {
+    font-weight: 600;
+  }
   a {
     button {
       cursor: pointer;
