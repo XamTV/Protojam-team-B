@@ -98,7 +98,7 @@ function MCQ({ setData }) {
             setPoints(points + selected);
 
             axios
-              .post(import.meta.env.VITE_SSH_URL, points)
+              .post(`${import.meta.env.VITE_SSH_URL}results`, points)
               .then((res) => {
                 setData(res.data);
               })
