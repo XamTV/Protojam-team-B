@@ -12,7 +12,7 @@ function Navbar() {
         <Link to={user === null ? "/*" : "/home"}>Home</Link>
         <Link to={user === null ? "/*" : "/quizz"}>Quizz</Link>
         <Link to={user === null ? "/*" : "/team"}>Team</Link>
-        <Link to="/">Se Deco</Link>
+        <Link to="/">Deconnexion</Link>
       </nav>
     </section>
   );
