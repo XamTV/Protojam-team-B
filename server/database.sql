@@ -62,11 +62,11 @@ CREATE TABLE tree (
 );
 
 INSERT INTO tree (`name`, `picture`) VALUES
-('Saule saltimbanque', 'Placeholder 1'),
-('Chêne cosmique', 'Placeholder 2'),
-('Erable enigmatique', 'Placeholder 3'),
-('Pin paradoxal', 'Placeholder 4'),
-('Sylvain Duriff', 'Placeholder 5');
+('Saule saltimbanque', 'https://media.discordapp.net/attachments/1240565032056524851/1240766535858126848/Saule.jpg?ex=6647c162&is=66466fe2&hm=3d4b4fda54f565a2c70f02972e3b06832134f9666679e596095464a72bfad3e5&=&format=webp'),
+('Chêne cosmique', 'https://cdn.discordapp.com/attachments/1240565032056524851/1240766535098695731/Chene.jpg?ex=6647c162&is=66466fe2&hm=d3cc127ab03d7af56eb6bc9a344d6d6c5db49b94e381a1a89b96f5a3bf103c6f&'),
+('Erable enigmatique', 'https://media.discordapp.net/attachments/1240565032056524851/1240766535363203162/Erable.jpg?ex=6647c162&is=66466fe2&hm=d00ec6bff2d042ed2591354a5dcd34cc40627651ca25f51bf35725a948af5a1d&=&format=webp'),
+('Pin paradoxal', 'https://media.discordapp.net/attachments/1240565032056524851/1240766535622983852/Pin.jpg?ex=6647c162&is=66466fe2&hm=e0b703483e7b14a62e08833023ea1970f843c8ca754c3c10bbd40fd8dfa30f7c&=&format=webp'),
+('Sylvain Duriff', 'https://media.discordapp.net/attachments/1240299509876129835/1240589314774138890/Sylv.jpg?ex=66471c55&is=6645cad5&hm=9c1bb5b4102fa31ec2d693bab9166e43718a17b698cf9eaf456e7525f84d7f7b&=&format=webp&width=322&height=573');
 
 
 CREATE TABLE summary (
@@ -99,8 +99,14 @@ INSERT INTO questions (`question`, `reponse1`, `reponse2`, `reponse3`, `reponse4
 ('Quelle est votre opinion sur les écureuils ?', 'Ils sont mes compagnons de jeu préférés, surtout quand ils cachent mes clés.', 'J\'admire leur agilité et leur capacité à jongler avec des noix.', 'Je les invite à mes soirées pyjama pour qu\'ils racontent des histoires de la forêt.', 'Je les persuade de former une équipe de football acrobatique pour le prochain tournoi inter-espèces.'),
 ('Quel serait votre cri de guerre s\'il fallait défendre votre territoire ?', '"Feuilles en avant, branchés en arrière, nous ne reculerons pas !"', '"Par la racine de Groot, je vous défie, intrus !"', 'En avant, mes branches ! À l\'attaque !"', 'Avec la force de la chlorophylle, nous repousserons l\'envahisseur !"'),
 ('Quelle est votre réplique préférée en cas de sécheresse ?', '"Je vais faire la danse de la pluie jusqu\'à ce que même les nuages se fatiguent !"', '"Quelqu\'un a un abonnement premium à la météo ? Nous avons besoin d\'un arrosage express !"', '"C\'est l\'occasion parfaite pour une sieste à l\'ombre, n\'est-ce pas ?', 'Je vais distribuer des glaçons à tous les insectes en détresse, c\'est ma contribution à la lutte contre la canicule !"'),
-('Quelle est votre réaction face à une invasion de papillons ?', 'Je les accueille avec une fête à thème "Papillon Disco" et je danse avec eux toute la nuit.', ' J\'essaie de négocier un accord de paix en échange de quelques cookies à la lavande. ', 'Je les convaincs de former une troupe de ballet aérien pour divertir les autres arbres.', 'e prépare des mini-capes pour qu\'ils se transforment en papillons super-héros.'),
+('Quelle est votre réaction face à une invasion de papillons ?', 'Je les accueille avec une fête à thème "Papillon Disco" et je danse avec eux toute la nuit.', ' J\'essaie de négocier un accord de paix en échange de quelques cookies à la lavande. ', 'Je les convaincs de former une troupe de ballet aérien pour divertir les autres arbres.', 'Je prépare des mini-capes pour qu\'ils se transforment en papillons super-héros.'),
 ('Quel serait votre passe-temps favori en automne ?', 'Rassembler toutes les feuilles tombées pour créer un tapis de couleurs et sauter dedans comme un enfant.', 'Organiser des soirées cinéma en plein air pour regarder des films d\'horreur avec les chauves-souris.', 'Jouer à cache-cache avec les écureuils et les champignons sous la lune.', 'Organiser une compétition de sculptures de citrouilles avec les sorcières du coin. '),
 ('Quelle est votre opinion sur les vents violents ?', 'Je les prends comme une opportunité de faire du kite-surf sur les rafales. ', 'J\'essaie de les convaincre de faire une pause pour que je puisse terminer mon livre tranquillement.', 'Je les défie à une bataille de blagues pour voir qui est le plus venté. ', 'Je les invite à une danse endiablée pour créer un ballet éolien spectaculaire.'),
 ('Quel serait votre message à un arbre nouvellement planté ?', '"Bienvenue dans le club des êtres éthérés ! Prépare-toi à une vie remplie d\'aventures folles !" ', '"Ne t\'inquiète pas, les premiers siècles sont les plus difficiles. Accroche-toi, ça va devenir racinéalement génial !"', ' "Fais attention aux oiseaux farceurs, ils ont tendance à se moquer des jeunes pousses comme toi. Mais ne te laisse pas détourner de ton chemin vers la grandeur arboricole !"', '"N\'aie pas peur de grandir et d\'étendre tes branches vers le ciel. Tu es destiné à de grandes choses, petit arbre !"'),
 ('Quelle serait votre réaction si vous étiez choisi comme arbre de Noël ?', '"Je vais me parer de guirlandes et de boules avec autant de grâce qu\'un paon en parade !" ', '"Je demanderai aux lutins de me raconter des blagues pour égayer l\'atmosphère festive."', '"Je vais inviter tous les animaux de la forêt à une fête sous mes branches pour célébrer ensemble." ', '"Je vais distribuer des cadeaux de bien-être et des souhaits de paix à tous ceux qui passent près de moi."');
+
+CREATE TABLE user (
+id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+name VARCHAR(75) NOT NULL,
+password VARCHAR(50) NOT NULL
+);

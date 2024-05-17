@@ -18,4 +18,9 @@ return [
     'summaries/trees' => ['HomeController', 'getAllSummaries',],
     'questions' => ['HomeController', 'getAllQuestions',],
     'results' => ['QuizzController', 'getResults'],
+    'resultat' => ['QuizzController', 'resultat'],
+
+    'register' => ['AccountController', 'registerUser'],
+    'connect' => ['AccountController', 'connectUser'],
+
 ];

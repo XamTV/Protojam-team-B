@@ -12,32 +12,36 @@ class QuizzController extends AbstractAPIController
 {
     public function getResults()
     {
-        $summaryManager = new SummaryManager();
-        $results = $summaryManager->getResults();        
-        return $results;
-        // var_dump($results);
-        // die();
+        $summaryManager = new SummaryManager();    
+        if ($_SERVER['REQUEST_METHOD'] === "POST") {
+            $body = file_get_contents('php://input');
+            $result = json_decode($body, true);
 
-        // $score = $_GET['score'];
+            $_SESSION['result'] = $result;
 
-        // if ($_SERVER['REQUEST_METHOD'] === "POST") { 
-        //     // $score = $_POST['points'];
-        //     if ( $score >= 10 && $score <= 15) {
-        //         $result = $summaryManager->getSummary(1);
-        //         header('Location: results');
-        //     }
-
-        //     var_dump($score);
-        //     die();
-        //     $result = $summaryManager->getSummary(1);
-        //     header('Location: results');
-        //     return json_encode($result);
-        // }
-
-        // if ( $score > 10) {
-        //     $summary = $summaryManager->getSummary(1);
-        //     header('Location: /results');
-        //     return json_encode($summary);
-        // }
+            if ($result === 24) {
+                $summary = $summaryManager->getSummary(5);
+            } elseif ($result >= 10 && $result <= 18) {
+                $summary = $summaryManager->getSummary(1);
+            } elseif ($result > 18 && $result <= 26) {
+                $summary = $summaryManager->getSummary(2);
+            } elseif ($result > 26 && $result <= 32) {
+                $summary = $summaryManager->getSummary(3);
+            } elseif ($result > 32) {
+                $summary = $summaryManager->getSummary(4);
+            }
+            return json_encode($summary);
+        }
+    $summary = $summaryManager->getSummary(3);
+    return json_encode($summary);
     }
+
+    public function resultat()
+
+    {   
+        $_SESSION['test'] = 40;
+        $resultat = $_SESSION ['result'];
+        return json_encode($resultat);
+    }
+
 }

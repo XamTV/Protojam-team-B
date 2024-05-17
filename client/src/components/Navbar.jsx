@@ -6,7 +6,7 @@ function Navbar() {
     <section className="NavbarComponent">
       <h1>PersonaliTREE</h1>
       <nav className="navBar">
-        <Link to="/">Home</Link>
+        <Link to="/home">Home</Link>
         <Link to="/quizz">Quizz</Link>
         <Link to="/team">Team</Link>
       </nav>

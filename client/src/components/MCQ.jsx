@@ -1,12 +1,13 @@
+/* eslint-disable react/prop-types */
 import { useState, useEffect } from "react";
 import axios from "axios";
 
 import "../style/MCQ.scss";
 
-function MCQ() {
+function MCQ({ setData }) {
   const [index, setIndex] = useState(1);
   const [points, setPoints] = useState(0);
-  const [selected, setSelected] = useState();
+  const [selected, setSelected] = useState(0);
   const [questions, setQuestions] = useState([]);
   const [progress, setProgress] = useState(10);
 
@@ -16,11 +17,11 @@ function MCQ() {
       return newProgress;
     });
   };
-
+  console.info(points);
   useEffect(() => {
     const getQuestions = () => {
       axios
-        .get(`https://protojam-team-b.onrender.com/questions`)
+        .get(import.meta.env.VITE_API_URL)
         .then((res) => {
           setQuestions(res.data);
         })
@@ -44,7 +45,6 @@ function MCQ() {
                 <input
                   type="radio"
                   name="questions"
-                  checked
                   onChange={() => setSelected(1)}
                 />
                 <p>{question.reponse1}</p>
@@ -81,6 +81,7 @@ function MCQ() {
           className={index >= questions.length ? "button hidden" : "button"}
           type="button"
           id="plus-button"
+          disabled={!(selected > 0)}
           onClick={() => {
             setIndex(index + 1);
             handlePlusClick();
@@ -89,24 +90,26 @@ function MCQ() {
         >
           Question suivante
         </button>
+
         <button
           className={index === questions.length ? "button" : "button hidden"}
           type="button"
-          onClick={() =>
+          onClick={() => {
+            setPoints(points + selected);
+
             axios
-              .post("https://protojam-team-b.onrender.com/results", {
-                result: `${points}`,
-              })
+              .post(`${import.meta.env.VITE_SSH_URL}results`, points)
               .then((res) => {
-                console.info(res);
+                setData(res.data);
               })
               .catch((err) => {
                 console.error(err);
-              })
-          }
+              });
+          }}
         >
           Voir mon résultat
         </button>
+        {/*  </Link> */}
       </div>
       <div className="progress-container">
         <div className="progress-bar" style={{ width: `${progress}%` }} />
