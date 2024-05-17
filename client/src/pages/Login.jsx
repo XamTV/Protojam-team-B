@@ -1,7 +1,11 @@
-import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useData } from "../context/Authcontext";
+
+import axios from "axios";
+
+import "../style/Login.scss";
+
 
 function Login() {
   const [username, setUsername] = useState("");
@@ -45,6 +49,7 @@ function Login() {
   return (
     <section className="LoginComponent">
       <h1>PersonaliTREE</h1>
+      <div className="champs">
       <form className="username">
         <label htmlFor="username">Username : </label>
         <input
@@ -69,7 +74,8 @@ function Login() {
           required
         />
       </form>
-
+      </div>
+      <div className="buttonsConnect">
       <button type="button" className="profile-button" onClick={handleLogin}>
         Se Connecter
       </button>
@@ -77,6 +83,7 @@ function Login() {
       <button type="button" className="profile-button" onClick={handleRegister}>
         S'enregistrer
       </button>
+      </div>
     </section>
   );
 }
