@@ -16,8 +16,6 @@ class QuizzController extends AbstractAPIController
         if ($_SERVER['REQUEST_METHOD'] === "POST") {
             $body = file_get_contents('php://input');
             $result = json_decode($body, true);
-            var_dump($result);
-            die();
             if ($result === 24) {
                 $summary = $summaryManager->getSummary(5);
             } elseif ($result >= 10 && $result <= 18) {
