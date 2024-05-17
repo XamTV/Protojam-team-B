@@ -104,3 +104,9 @@ INSERT INTO questions (`question`, `reponse1`, `reponse2`, `reponse3`, `reponse4
 ('Quelle est votre opinion sur les vents violents ?', 'Je les prends comme une opportunité de faire du kite-surf sur les rafales. ', 'J\'essaie de les convaincre de faire une pause pour que je puisse terminer mon livre tranquillement.', 'Je les défie à une bataille de blagues pour voir qui est le plus venté. ', 'Je les invite à une danse endiablée pour créer un ballet éolien spectaculaire.'),
 ('Quel serait votre message à un arbre nouvellement planté ?', '"Bienvenue dans le club des êtres éthérés ! Prépare-toi à une vie remplie d\'aventures folles !" ', '"Ne t\'inquiète pas, les premiers siècles sont les plus difficiles. Accroche-toi, ça va devenir racinéalement génial !"', ' "Fais attention aux oiseaux farceurs, ils ont tendance à se moquer des jeunes pousses comme toi. Mais ne te laisse pas détourner de ton chemin vers la grandeur arboricole !"', '"N\'aie pas peur de grandir et d\'étendre tes branches vers le ciel. Tu es destiné à de grandes choses, petit arbre !"'),
 ('Quelle serait votre réaction si vous étiez choisi comme arbre de Noël ?', '"Je vais me parer de guirlandes et de boules avec autant de grâce qu\'un paon en parade !" ', '"Je demanderai aux lutins de me raconter des blagues pour égayer l\'atmosphère festive."', '"Je vais inviter tous les animaux de la forêt à une fête sous mes branches pour célébrer ensemble." ', '"Je vais distribuer des cadeaux de bien-être et des souhaits de paix à tous ceux qui passent près de moi."');
+
+CREATE TABLE user (
+id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+name VARCHAR(75) NOT NULL,
+password VARCHAR(50) NOT NULL
+);

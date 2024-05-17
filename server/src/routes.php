@@ -19,4 +19,6 @@ return [
     'questions' => ['HomeController', 'getAllQuestions',],
     'results' => ['QuizzController', 'getResults'],
     'resultat' => ['QuizzController', 'resultat'],
+    'register' => ['AccountController', 'registerUser'],
+    'connect' => ['AccountController', 'connectUser'],
 ];
